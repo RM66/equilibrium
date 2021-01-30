@@ -1,0 +1,1 @@
+(()=>{const e=Array.from(document.getElementById("sliders").children),t={connect:"lower",direction:"rtl",orientation:"vertical",pips:{mode:"steps",density:2},range:{min:-12,max:12},start:0,step:1,tooltips:!0};e.forEach(((e,o)=>{noUiSlider.create(e,t),e.noUiSlider.on("update",(([e])=>{console.log("value, index",+e,o)}))}))})();

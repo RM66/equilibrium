@@ -9,7 +9,7 @@
   },
   "private": true,
   "scripts": {
-    "minify": "minify ./src/index.html > ./public/index.html && minify ./src/script.js > ./public/script.js  && minify ./src/style.css > ./public/style.css"
+    "build": "minify ./src/index.html > ./public/index.html && minify ./src/script.js > ./public/script.js  && minify ./src/style.css > ./public/style.css"
   },
   "devDependencies": {
     "husky": "^4.3.8",
@@ -17,7 +17,7 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "npm run minify && git add ."
+      "pre-commit": "npm run build && git add ."
     }
   }
 }
