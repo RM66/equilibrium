@@ -27,7 +27,7 @@ section {
 
 .band::before,
 .band::after {
-  content: attr(data-freq);
+  content: attr(data-freqstr);
   display: block;
   padding: 1em 0;
   position: absolute;
