@@ -9,7 +9,7 @@
   },
   "private": true,
   "scripts": {
-    "build": "minify ./src/index.html > ./public/index.html && minify ./src/script.js > ./public/script.js  && minify ./src/style.css > ./public/style.css"
+    "build": "minify ./src/index.html > ./docs/index.html && minify ./src/script.js > ./docs/script.js  && minify ./src/style.css > ./docs/style.css"
   },
   "devDependencies": {
     "husky": "^4.3.8",
