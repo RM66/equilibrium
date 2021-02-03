@@ -11,7 +11,7 @@ body {
   font-size: 12px;
   font-family: system-ui;
   margin: 0;
-  overflow: auto;
+  overflow: auto hidden;
 }
 
 section {

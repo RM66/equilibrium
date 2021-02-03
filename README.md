@@ -1,2 +1,3 @@
-# equilibrium
+# EQuilibrium
+
 Equalizer calibration tool

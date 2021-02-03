@@ -1,0 +1,30 @@
+{
+  "name": "EQuilibrium",
+  "short_name": "EQuilibrium",
+  "start_url": ".",
+  "description": "Equalizer calibration tool",
+  "categories": "utilities",
+  "display": "standalone",
+  "icons": [
+    {
+      "src": "logo.svg",
+      "sizes": "any"
+    },
+    {
+      "src": "logo.png",
+      "sizes": "64x64",
+      "type": "image/png"
+    },
+    {
+      "src": "logo_hi.png",
+      "sizes": "128x128",
+      "type": "image/png"
+    },
+    {
+      "src": "logo_xhi.png",
+      "sizes": "256x256",
+      "type": "image/png"
+    }
+  ],
+  "type": "privileged"
+}

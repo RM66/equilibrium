@@ -18,11 +18,13 @@
     tooltips: true,
   };
 
-  const values = new Array(15);
-
   const audioCtx = new (window.AudioContext || window.webkitAudioContext)();
   const oscillator = audioCtx.createOscillator();
   const gain = audioCtx.createGain();
+
+  const handles = new Array(sliders.length);
+  const values = new Array(sliders.length);
+  let selected = -1;
   let started = false;
 
   oscillator.connect(gain);
@@ -39,6 +41,7 @@
     const handle = el.noUiSlider.target.getElementsByClassName(
       "noUi-handle"
     )[0];
+    handles[i] = handle;
     handle.addEventListener("focus", () => {
       if (!started) {
         oscillator.start();
@@ -46,7 +49,33 @@
       }
       oscillator.frequency.value = el.dataset.freqnum;
       gain.gain.value = values[i];
+      selected = i;
     });
-    handle.addEventListener("blur", () => (gain.gain.value = 0));
+    handle.addEventListener("blur", () => {
+      gain.gain.value = 0;
+      selected = -1;
+    });
   });
+
+  window.addEventListener(
+    "keydown",
+    (e) => {
+      if (e.key === "Escape") {
+        handles[selected].blur();
+      } else if (e.key === "ArrowRight") {
+        e.stopPropagation();
+        if (selected < sliders.length - 1) {
+          selected++;
+          handles[selected].focus();
+        }
+      } else if (e.key === "ArrowLeft") {
+        e.stopPropagation();
+        if (selected > 0) {
+          selected--;
+          handles[selected].focus();
+        }
+      }
+    },
+    { capture: true }
+  );
 })();
