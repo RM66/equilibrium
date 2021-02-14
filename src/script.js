@@ -55,6 +55,9 @@
       gain.gain.value = 0;
       selected = -1;
     });
+    handle.addEventListener("touchend", function () {
+      this.focus();
+    });
   });
 
   window.addEventListener(
