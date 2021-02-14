@@ -52,8 +52,19 @@
       selected = i;
     });
     handle.addEventListener("blur", () => {
-      gain.gain.value = 0;
-      selected = -1;
+      stop();
+    });
+  });
+
+  function stop() {
+    gain.gain.value = 0;
+    selected = -1;
+  }
+
+  document.getElementById("reset").addEventListener("click", () => {
+    sliders.forEach((el) => {
+      el.noUiSlider.reset();
+      stop();
     });
     handle.addEventListener("touchend", function () {
       this.focus();

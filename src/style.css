@@ -14,11 +14,27 @@ body {
   overflow: auto hidden;
 }
 
+.action {
+  border-bottom: 1px dashed;
+  color: royalblue;
+  font-weight: 500;
+  position: absolute;
+  top: 0.5em;
+}
+
+#configure {
+  left: 1em;
+}
+
+#reset {
+  right: 1em;
+}
+
 section {
   display: flex;
   height: 100%;
   justify-content: space-around;
-  padding: 4em 2em;
+  padding: 5em 2em 4em;
 }
 
 .band {
