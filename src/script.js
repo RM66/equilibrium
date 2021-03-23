@@ -72,7 +72,8 @@
       const slider = noUiSlider.create(el, options);
       slider.on("update", ([db]) => {
         const vol = Math.pow(10, (db - 12) / 20);
-        gain.gain.value = values[i] = vol;
+        values[i] = vol;
+        if (selected === i) gain.gain.value = vol;
       });
       sliders.push(slider);
 
