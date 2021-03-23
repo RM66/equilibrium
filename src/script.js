@@ -1,4 +1,6 @@
 (() => {
+  const LS_KEY = "config";
+
   const configDialog = document.querySelector("dialog");
   const configInput = configDialog.querySelector("input");
 
@@ -13,8 +15,10 @@
   configDialog
     .querySelector("button[type=submit]")
     .addEventListener("click", () => {
-      init(parseFreqsString(configInput.value));
+      const config = parseFreqsString(configInput.value);
+      init(config);
       configDialog.close();
+      localStorage.setItem(LS_KEY, JSON.stringify(config));
     });
 
   // returns array of [title, value]
@@ -141,5 +145,7 @@
     { capture: true }
   );
 
-  configDialog.showModal();
+  const savedConfig = localStorage.getItem(LS_KEY);
+  if (savedConfig) init(JSON.parse(savedConfig));
+  else configDialog.showModal();
 })();
