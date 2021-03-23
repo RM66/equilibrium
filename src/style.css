@@ -14,10 +14,56 @@ body {
   overflow: auto hidden;
 }
 
+dialog {
+  border-color: #fff;
+  font-size: 14px;
+  z-index: 1;
+}
+
+dialog input {
+  font-size: 14.5px;
+  margin: 0 -7px;
+  padding: 6px;
+  width: calc(100% + 14px);
+}
+
+dialog button {
+  border: 1px solid royalblue;
+  border-radius: 3px;
+  float: right;
+}
+
+dialog button[type="submit"] {
+  margin-top: 8px;
+  font-size: 14.5px;
+  padding: 6px 12px;
+}
+
+dialog button[type="reset"] {
+  border-color: lightgray;
+  font-size: 14px;
+  padding: 3px 8px 4px;
+}
+
+a {
+  color: royalblue;
+  cursor: pointer;
+  font-weight: 500;
+}
+
+a:hover {
+  color: mediumblue;
+}
+
+.suggestions {
+  display: flex;
+  flex-direction: column;
+  white-space: nowrap;
+}
+
 .action {
   border-bottom: 1px dashed;
-  color: royalblue;
-  font-weight: 500;
+  font-size: 14px;
   position: absolute;
   top: 0.5em;
 }
@@ -43,7 +89,7 @@ section {
 
 .band::before,
 .band::after {
-  content: attr(data-freqstr);
+  content: attr(data-title);
   display: block;
   padding: 1em 0;
   position: absolute;
@@ -63,10 +109,19 @@ section {
 }
 
 #sliders .noUi-handle {
+  cursor: pointer;
   height: 30px;
   right: -4px;
   top: -16px;
   width: 24px;
+}
+
+#sliders .noUi-handle:focus {
+  cursor: grab;
+}
+
+#sliders .noUi-handle:active {
+  cursor: grabbing;
 }
 
 #sliders .noUi-handle::before,
